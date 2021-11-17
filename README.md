@@ -13,6 +13,7 @@
   * [רכיבים רשמיים](https://github.com/eli-game-dev/treasure-hunt-game/blob/main/formal-elements.md)
 
 ## core game loop
+ itch.io: https://eliyahup.itch.io/treasure-hunt-game
 
 במטלה הזו ממשתי את התהליך העקרי שהשחקן עושה בתלת מימד.
 יצרתי שחקן מקפסולה והוספתי לו charater controller ועשיתי שיוכל לזוז גם בעזרת המקשים וגם עם העכבר.
