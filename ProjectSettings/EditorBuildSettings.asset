@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/treasureGame.unity
     guid: f4833769c5c83564f9cc5169d5de90a3
+  - enabled: 1
+    path: Assets/Scenes/win.unity
+    guid: b2acae13132a33747b337c1296092402
   m_configObjects: {}
