@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class interact : MonoBehaviour
@@ -9,7 +10,15 @@ public class interact : MonoBehaviour
     [SerializeField] string triggeringTag;
     public GameObject Canvas;
     public GameObject text;
+    private static bool answered;
+    private bool objectAnswered;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        answered = false;
+        objectAnswered = false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("enter");
@@ -20,17 +29,30 @@ public class interact : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("enter");
         if (other.tag == triggeringTag)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (answered)
+            {
+                Debug.Log("test");  
+                objectAnswered = true;
+                answered = false;
+            }
+            if (Input.GetKey(KeyCode.E)&&!objectAnswered)
             {
                 other.GetComponent<KeyboardMover>().SetCanRotate(false);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 text.SetActive(false);
-                Debug.Log("enter2");
                 Canvas.SetActive(true); 
+            }
+            Debug.Log(objectAnswered);  
+            if (objectAnswered) 
+            {
+                Debug.Log("answered");  
+                text.SetActive(false);
+                other.GetComponent<KeyboardMover>().SetCanRotate(true);
+                Canvas.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;   
             }
         }
     }
@@ -39,6 +61,7 @@ public class interact : MonoBehaviour
     {
         if (other.tag == triggeringTag)
         {
+            text.SetActive(false);
             other.GetComponent<KeyboardMover>().SetCanRotate(true);
             Canvas.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
@@ -46,6 +69,12 @@ public class interact : MonoBehaviour
         }
     }
 
+    public void setAnswred(bool b)
+    {
+        Debug.Log("answered = true");  
+        answered = b;
+        Debug.Log(answered);  
+    }
     // private void OnCollisionEnter(Collision other)
     // {
     //     Debug.Log("enter");
@@ -56,11 +85,7 @@ public class interact : MonoBehaviour
     //     }
     // }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
