@@ -11231,9 +11231,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 953152571
+  NetworkManagerOwner: {fileID: 0}
   AlwaysReplicateAsRoot: 0
+  <IsPlayerObject>k__BackingField: 0
+  <IsSpawned>k__BackingField: 0
+  <DestroyWithScene>k__BackingField: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  m_IsReparented: 0
+  m_CachedParent: {fileID: 0}
+  m_ChildNetworkBehaviours: []
 --- !u!1001 &1439167382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16234,6 +16241,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7017129048736510156, guid: bcf194166b0fb2049ab85ffd55b3e62d, type: 3}
+    - {fileID: 5552998500764746247, guid: bcf194166b0fb2049ab85ffd55b3e62d, type: 3}
+    - {fileID: -7800646175246579537, guid: bcf194166b0fb2049ab85ffd55b3e62d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bcf194166b0fb2049ab85ffd55b3e62d, type: 3}
 --- !u!1001 &5748205582784191338
 PrefabInstance:
