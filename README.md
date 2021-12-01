@@ -41,10 +41,14 @@
 [StartInstruction](https://github.com/eli-game-dev/treasure-hunt-game/blob/main/Assets/scripts/StartInstruction.cs)
 
 הגדרתי אובייקט Game manger שהוא אחראי על הגדרת השאלות על ידי המשתמש (כרגע רק ביוניטי). ניתן להגדיר את מספר השאלות בכל שאלה מגדירים מה השאלה מה ה4 תשובות אפשריות ומה צבע התשובה הנכונה (הוגד ב-Enum).
+![Screenshot (27)](https://user-images.githubusercontent.com/57856087/144183224-b36b8005-2daf-41e2-98e2-67419e042b0f.png)
 
 כאשר המשתמש עונה תשובה נכונה קופצת לו הודעה שהוא ענה נכון וכאשר המשתמש עונה תשובה שגויה קופצת לו הודעה שהוא ענה תשובה שגויה והוא קופא במקום למספר שניות .
 כאשר המשתמש ענה על כל השאלות הוא הוא למסך שמודיע לו שהוא ניצח.
 [GameManger](https://github.com/eli-game-dev/treasure-hunt-game/blob/main/Assets/scripts/GameManger.cs)
+  ![Screenshot (23)](https://user-images.githubusercontent.com/57856087/144183349-d8fc17b4-2d45-4cfc-a1f8-190c442f8fb8.png)
+![Screenshot (26)](https://user-images.githubusercontent.com/57856087/144183355-0aa7085e-cf07-497a-97b6-0372aef1ec18.png)
+
 
 כאשר השחקן סיים לענות על שאלה בקוביה מסוימת לא ניתן לחזור לאותה קוביה ב בשביל לענות על שאלה אלא הוא צריך לחפש קוביה אחרת.
 ביצעתי את זה באמצעות משתנה סטטי ועוד משתנה בוליאני של האובייקט כדי לכבות כל קוביה בנפרד.
