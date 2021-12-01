@@ -2017,12 +2017,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'you need to get the red cubes for answer a questions.
-
-    at each cube
-    you can answar a 1 question.
-
-    if the answer is worng you freeze in your place.'
+  m_Text: you need to walk to the red cubes for answer questions. at each cube you
+    can answer a 1 question. if the answer is wrong you freeze in your place for
+    several second.
 --- !u!222 &209548220
 CanvasRenderer:
   m_ObjectHideFlags: 0
