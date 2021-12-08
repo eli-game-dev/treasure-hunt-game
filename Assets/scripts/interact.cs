@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class interact : MonoBehaviour
+public class interact : MonoBehaviourPun
 {
     
     [SerializeField] string triggeringTag;
@@ -22,14 +24,14 @@ public class interact : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("enter");
-        if (other.tag == triggeringTag)
+        if (other.tag == triggeringTag && other.GetComponent<PhotonView>().IsMine)
         {
             text.SetActive(true);
         }
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other )
     {
-        if (other.tag == triggeringTag)
+        if (other.tag == triggeringTag && other.GetComponent<PhotonView>().IsMine)
         {
             if (answered)
             {
@@ -59,7 +61,7 @@ public class interact : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == triggeringTag)
+        if (other.tag == triggeringTag && other.GetComponent<PhotonView>().IsMine)
         {
             text.SetActive(false);
             other.GetComponent<KeyboardMover>().SetCanRotate(true);

@@ -1,4 +1,4 @@
-﻿%YAML 1.1
+%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
 OcclusionCullingSettings:
@@ -483,7 +483,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647352651}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1647352653
 Camera:
   m_ObjectHideFlags: 0
