@@ -5,11 +5,11 @@ using UnityEngine;
 using Photon.Pun;
 
 /**
- * This component moves its object when the player clicks the arrow keys.
+ * This component moves its object when the player clicks the arrow keys and use mouse.
  */
-public class KeyboardMover : MonoBehaviourPun
+public class PlayerMover : MonoBehaviourPun
 {
-    [Tooltip("Speed of movement, in meters per second")] [SerializeField]
+    [Tooltip("Speed of movement")] [SerializeField]
     float speed = 4f;
 
     [SerializeField] float sprintSpeed = 8f;
@@ -17,7 +17,6 @@ public class KeyboardMover : MonoBehaviourPun
 
     public Camera PlayerSee;
 
-    //  public AudioListener audioListener;
     private KeyCode sprint;
     private float currentSpeed;
     private bool canRotate;
@@ -28,7 +27,7 @@ public class KeyboardMover : MonoBehaviourPun
     {
         if (photonView.IsMine)
         {
-            KeyboardMover.LocalPlayerInstance = this.gameObject;
+            PlayerMover.LocalPlayerInstance = this.gameObject;
         }
 
         // #Critical
@@ -36,7 +35,7 @@ public class KeyboardMover : MonoBehaviourPun
         DontDestroyOnLoad(this.gameObject);
 
         controller = GetComponent<CharacterController>();
-        // Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         canRotate = true;
         canMove = true;
     }
@@ -48,11 +47,9 @@ public class KeyboardMover : MonoBehaviourPun
             return;
         }
 
-        if (PlayerSee.enabled == false)
+        if (PlayerSee.enabled == false) //on only player camera 
             PlayerSee.enabled = true;
 
-        // if (audioListener.enabled == false)
-        //     audioListener.enabled = true;
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -64,18 +61,18 @@ public class KeyboardMover : MonoBehaviourPun
         }
 
         controller.SimpleMove(Vector3.forward * 0); //move player gravity
-        float
-            horizontal =
-                Input.GetAxis("Horizontal"); // +1 if right arrow is pushed, -1 if left arrow is pushed, 0 otherwise
+        float horizontal = Input.GetAxis("Horizontal"); // +1 if right arrow is pushed, -1 if left arrow is pushed, 0 otherwise
         float vertical = Input.GetAxis("Vertical"); // +1 if up arrow is pushed, -1 if down arrow is pushed, 0 otherwise
         float rotX = Input.GetAxis("Mouse X");
         float rotY = Input.GetAxis("Mouse Y");
+        
         if (canRotate)
             transform.Rotate(0, rotX, 0);
 
         Vector3 movementVector = new Vector3(horizontal, 0, vertical) * currentSpeed * Time.deltaTime;
         if (canMove)
             controller.Move(transform.rotation * movementVector);
+        
         if (canRotate)
             PlayerSee.transform.Rotate(-rotY * currentSpeed, 0, 0);
     }

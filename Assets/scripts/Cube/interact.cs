@@ -41,7 +41,7 @@ public class interact : MonoBehaviourPun
             }
             if (Input.GetKey(KeyCode.E)&&!objectAnswered)
             {
-                other.GetComponent<KeyboardMover>().SetCanRotate(false);
+                other.GetComponent<PlayerMover>().SetCanRotate(false);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 text.SetActive(false);
@@ -52,7 +52,7 @@ public class interact : MonoBehaviourPun
             {
                 Debug.Log("answered");  
                 text.SetActive(false);
-                other.GetComponent<KeyboardMover>().SetCanRotate(true);
+                other.GetComponent<PlayerMover>().SetCanRotate(true);
                 Canvas.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;   
             }
@@ -64,7 +64,7 @@ public class interact : MonoBehaviourPun
         if (other.tag == triggeringTag && other.GetComponent<PhotonView>().IsMine)
         {
             text.SetActive(false);
-            other.GetComponent<KeyboardMover>().SetCanRotate(true);
+            other.GetComponent<PlayerMover>().SetCanRotate(true);
             Canvas.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
 

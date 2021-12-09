@@ -17,7 +17,6 @@ public class PlayerManager :  MonoBehaviourPunCallbacks, IPunObservable
     
     public void Awake()
     {
-        
         // #Important
         // used in GameManager.cs: we keep track of the localPlayer instance to prevent instanciation when levels are synchronized
         if (photonView.IsMine)
@@ -45,9 +44,4 @@ public class PlayerManager :  MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
- 
-    }
 }

@@ -149,7 +149,7 @@ public class GameMangerQuestion : MonoBehaviourPunCallbacks
         Debug.Log("Wait.");
         StartCoroutine(WaitToNextClick());
         canClick = false;
-        KeyboardMover.LocalPlayerInstance.GetComponent<KeyboardMover>().SetCanMove(false);
+        PlayerMover.LocalPlayerInstance.GetComponent<PlayerMover>().SetCanMove(false);
     }
 
     private IEnumerator WaitToNextClick()
@@ -165,7 +165,7 @@ public class GameMangerQuestion : MonoBehaviourPunCallbacks
 
         worngAnswerUI.SetActive(false);
         Debug.Log("Finished waiting.");
-        KeyboardMover.LocalPlayerInstance.GetComponent<KeyboardMover>().SetCanMove(true);
+        PlayerMover.LocalPlayerInstance.GetComponent<PlayerMover>().SetCanMove(true);
         canClick = true;
     }
 
