@@ -11,6 +11,9 @@ public class PlayerMover : MonoBehaviourPun
 {
     [Tooltip("Speed of movement")] [SerializeField]
     float speed = 4f;
+    
+    [Tooltip("Speed of rotaion")] [SerializeField]
+    float rotaionSpeed = 2f;
 
     [SerializeField] float sprintSpeed = 8f;
     private CharacterController controller;
@@ -33,7 +36,6 @@ public class PlayerMover : MonoBehaviourPun
         // #Critical
         // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
         DontDestroyOnLoad(this.gameObject);
-
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         canRotate = true;
@@ -46,11 +48,7 @@ public class PlayerMover : MonoBehaviourPun
         {
             return;
         }
-
-        if (PlayerSee.enabled == false) //on only player camera 
-            PlayerSee.enabled = true;
-
-
+        
         if (Input.GetKey(KeyCode.LeftShift))
         {
             currentSpeed = sprintSpeed;
@@ -74,7 +72,7 @@ public class PlayerMover : MonoBehaviourPun
             controller.Move(transform.rotation * movementVector);
         
         if (canRotate)
-            PlayerSee.transform.Rotate(-rotY * currentSpeed, 0, 0);
+            PlayerSee.transform.Rotate(-rotY * rotaionSpeed, 0, 0);
     }
 
     public void SetCanRotate(bool b)

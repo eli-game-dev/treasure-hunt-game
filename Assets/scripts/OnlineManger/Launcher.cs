@@ -92,7 +92,10 @@ namespace Com.MyCompany.MyGame
                 PhotonNetwork.GameVersion = gameVersion;
             }
         }
+        #endregion
 
+        #region MonoBehaviourPunCallbacks Callbacks
+        
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
             Debug.Log(
@@ -114,10 +117,6 @@ namespace Com.MyCompany.MyGame
 
             Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         }
-
-        #endregion
-
-        #region MonoBehaviourPunCallbacks Callbacks
 
         public override void OnConnectedToMaster()
         {

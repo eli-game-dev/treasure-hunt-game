@@ -5,12 +5,14 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using TMPro;
 using Random = UnityEngine.Random;
 
 public class GameMangerQuestion : MonoBehaviourPunCallbacks 
 {
     [SerializeField] 
-    public  List<Question> questions;
+    public List<Question> questions;
+    public static int NumOfQuetions;
     public static List<Question> unAnsweredYet;
     private Question currentQuestion;
     //public GameObject player;
@@ -19,7 +21,7 @@ public class GameMangerQuestion : MonoBehaviourPunCallbacks
     [SerializeField] private Text answerRedText;
     [SerializeField] private Text answerBlueText;
     [SerializeField] private Text answerOrangeText;
-    [SerializeField] private Text answerGreenText; 
+    [SerializeField] private Text answerGreenText;
 
     private bool canClick;
     public GameObject cube;
@@ -36,6 +38,7 @@ public class GameMangerQuestion : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
+        NumOfQuetions = questions.Count;
         DontDestroyOnLoad(this);
     }
 
@@ -140,6 +143,7 @@ public class GameMangerQuestion : MonoBehaviourPunCallbacks
         Debug.Log("CORRECT!");
         StartCoroutine(setActiveForSomeSecond());
         cube.GetComponent<interact>().setAnswred(true);
+        Score._score++;
         SetCurrenQuestion();
     }
 
