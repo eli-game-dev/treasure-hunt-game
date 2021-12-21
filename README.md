@@ -58,6 +58,10 @@
 הפכתי את המשחק למשחק מרובה משתתפים בעזרת פוטון(נעזרתי במדריך הבסיסי שלהם).
 
 הוספתי כאשר כל שחקן עונה על שאלה מוצג לו על כמה שאלות הוא ענה מתוך כמה.
+[Score](https://github.com/eli-game-dev/treasure-hunt-game/blob/main/Assets/scripts/Player/Score.cs)
+
+בנוסף כאשר שחקן עונה על שאלה אז הוא מקבל רמז היכן נמצאת השאלה הבאה. הרמז מוצג לשחקן בפינה העליונה מצד ימין 
+[interact](https://github.com/eli-game-dev/treasure-hunt-game/blob/main/Assets/scripts/Cube/interact.cs)
 
 
 </div>
