@@ -54,7 +54,7 @@
 ביצעתי את זה באמצעות משתנה סטטי ועוד משתנה בוליאני של האובייקט כדי לכבות כל קוביה בנפרד.
 [interact](https://github.com/eli-game-dev/treasure-hunt-game/blob/main/Assets/scripts/interact.cs)
 
-## MultyPlayer
+## Multiplayer
 הפכתי את המשחק למשחק מרובה משתתפים בעזרת פוטון(נעזרתי במדריך הבסיסי שלהם).
 
 הוספתי כאשר כל שחקן עונה על שאלה מוצג לו על כמה שאלות הוא ענה מתוך כמה.
@@ -62,6 +62,7 @@
 
 בנוסף כאשר שחקן עונה על שאלה אז הוא מקבל רמז היכן נמצאת השאלה הבאה. הרמז מוצג לשחקן בפינה העליונה מצד ימין 
 [interact](https://github.com/eli-game-dev/treasure-hunt-game/blob/main/Assets/scripts/Cube/interact.cs)
+
 
 
 </div>
