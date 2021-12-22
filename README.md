@@ -63,6 +63,7 @@
 בנוסף כאשר שחקן עונה על שאלה אז הוא מקבל רמז היכן נמצאת השאלה הבאה. הרמז מוצג לשחקן בפינה העליונה מצד ימין 
 [interact](https://github.com/eli-game-dev/treasure-hunt-game/blob/main/Assets/scripts/Cube/interact.cs)
 
+![Screenshot (47)](https://user-images.githubusercontent.com/57856087/147014890-cd78e410-4b85-4a33-be22-5c49f8a4a671.png)
 
 
 </div>
