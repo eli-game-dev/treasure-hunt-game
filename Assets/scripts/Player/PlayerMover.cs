@@ -24,6 +24,8 @@ public class PlayerMover : MonoBehaviourPun
     private float currentSpeed;
     private bool canRotate;
     private bool canMove;
+    private Animator animator;
+
     public static GameObject LocalPlayerInstance;
 
     private void Awake()
@@ -32,11 +34,12 @@ public class PlayerMover : MonoBehaviourPun
         {
             PlayerMover.LocalPlayerInstance = this.gameObject;
         }
-
+        
         // #Critical
         // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
         DontDestroyOnLoad(this.gameObject);
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
         canRotate = true;
         canMove = true;
@@ -63,6 +66,15 @@ public class PlayerMover : MonoBehaviourPun
         float vertical = Input.GetAxis("Vertical"); // +1 if up arrow is pushed, -1 if down arrow is pushed, 0 otherwise
         float rotX = Input.GetAxis("Mouse X");
         float rotY = Input.GetAxis("Mouse Y");
+        
+        if(Input.GetAxis("Horizontal")!=0||Input.GetAxis("Vertical")!=0)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
         
         if (canRotate)
             transform.Rotate(0, rotX, 0);

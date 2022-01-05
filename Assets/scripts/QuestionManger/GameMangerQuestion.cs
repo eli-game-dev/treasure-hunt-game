@@ -8,20 +8,20 @@ using Photon.Pun;
 using TMPro;
 using Random = UnityEngine.Random;
 
-public class GameMangerQuestion : MonoBehaviourPunCallbacks 
+public class GameMangerQuestion : MonoBehaviourPunCallbacks
 {
-    [SerializeField] 
-    public List<Question> questions;
+    [SerializeField] public List<Question> questions;
     public static int NumOfQuetions;
     public static List<Question> unAnsweredYet;
+
     private Question currentQuestion;
     //public GameObject player;
 
-    [SerializeField] private Text questionText;
-    [SerializeField] private Text answerRedText;
-    [SerializeField] private Text answerBlueText;
-    [SerializeField] private Text answerOrangeText;
-    [SerializeField] private Text answerGreenText;
+    [SerializeField] private TextMeshProUGUI questionText;
+    [SerializeField] private TextMeshProUGUI answerRedText;
+    [SerializeField] private TextMeshProUGUI answerBlueText;
+    [SerializeField] private TextMeshProUGUI answerOrangeText;
+    [SerializeField] private TextMeshProUGUI answerGreenText;
 
     private bool canClick;
     public GameObject cube;
@@ -61,15 +61,15 @@ public class GameMangerQuestion : MonoBehaviourPunCallbacks
     {
         if (unAnsweredYet.Count > 0)
         {
-            Debug.Log("new question"+unAnsweredYet.Count);
+            Debug.Log("new question" + unAnsweredYet.Count);
             int randomQuestion = Random.Range(0, unAnsweredYet.Count);
             currentQuestion = unAnsweredYet[randomQuestion];
             questionText.text = currentQuestion.question;
             answerRedText.text = currentQuestion.redAnswer;
             answerBlueText.text = currentQuestion.blueAnswer;
-            answerOrangeText.text = currentQuestion.orangeAnswer;  
+            answerOrangeText.text = currentQuestion.orangeAnswer;
             answerGreenText.text = currentQuestion.greenAnswer;
-            unAnsweredYet.RemoveAt(randomQuestion); 
+            unAnsweredYet.RemoveAt(randomQuestion);
         }
         else
         {
@@ -141,9 +141,11 @@ public class GameMangerQuestion : MonoBehaviourPunCallbacks
     private void CorrectAnswer()
     {
         Debug.Log("CORRECT!");
+        Score._score++;
+        if(Score._score!=NumOfQuetions)
         StartCoroutine(setActiveForSomeSecond());
         cube.GetComponent<interact>().setAnswred(true);
-        Score._score++;
+      
         SetCurrenQuestion();
     }
 
@@ -175,8 +177,12 @@ public class GameMangerQuestion : MonoBehaviourPunCallbacks
 
     private IEnumerator setActiveForSomeSecond()
     {
-        correctAnswerUI.SetActive(true);
-        yield return new WaitForSeconds(timeObjectActive);
-        correctAnswerUI.SetActive(false);
+        if (this.gameObject != null)
+        {
+            correctAnswerUI.SetActive(true);
+            yield return new WaitForSeconds(timeObjectActive);
+            correctAnswerUI.SetActive(false); 
+        }
+      
     }
 }

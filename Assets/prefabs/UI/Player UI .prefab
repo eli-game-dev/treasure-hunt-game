@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNameText: {fileID: 6374738291161445570}
   screenOffset: {x: 0, y: 30, z: 0}
-  offsetHeigth: -0.8
+  offsetHeigth: 1
 --- !u!1 &3334682310590119857
 GameObject:
   m_ObjectHideFlags: 0
