@@ -18,6 +18,7 @@
 
 ## core game loop
  itch.io: https://eliyahup.itch.io/treasure-hunt-game
+  
  trailer: https://www.youtube.com/watch?v=IIt3AXXro_Q
 ![Untitled](https://user-images.githubusercontent.com/57856087/142923652-010775e3-cfbc-47c5-9c97-48f89c13a05d.png)
 
