@@ -16,10 +16,14 @@
 
   * [רכיבים רשמיים](https://github.com/eli-game-dev/treasure-hunt-game/blob/main/formal-elements.md)
 
-## core game loop
- itch.io: https://eliyahup.itch.io/treasure-hunt-game
+   itch.io: https://eliyahup.itch.io/treasure-hunt-game
   
  trailer: https://www.youtube.com/watch?v=IIt3AXXro_Q
+  
+  ![Screenshot (52)](https://user-images.githubusercontent.com/57856087/155165599-339ed036-e2f8-4833-bc15-2b43153dc80e.png)
+
+## core game loop
+
 ![Untitled](https://user-images.githubusercontent.com/57856087/142923652-010775e3-cfbc-47c5-9c97-48f89c13a05d.png)
 
 במטלה הזו ממשתי את התהליך העקרי שהשחקן עושה בתלת מימד.
